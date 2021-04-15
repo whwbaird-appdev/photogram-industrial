@@ -2,7 +2,15 @@
 
 In this project, we'll rebuild Photogram once more, but we'll do it without cutting any corners — we'll use database indexes and constraints, advanced association accessors, scopes, validations, view helper methods like `link_to` and `form_with` everywhere, partials to DRY up code judiciously, the Devise gem for authentication and password reset emails, authorizing access to each action explicitly, and many other industrial-strength upgrades.
 
-## Suggested steps
+## Add collaboratos
+
+As we work on this project, we're also going to practice using Git, providing and receiving Code Review.
+
+So first things first: click on the **Settings** tab of your repository, **Manage Access**, and add your teammates, `raghubetina`, `jelaniwoods`, and `pmckernin` as collaborators.
+
+[Here is a cheat sheet for our Git workflow.](https://gist.github.com/raghubetina/fb88a616ad071e7cbd8321378eb01808)
+
+## Steps
 
 ### ERD
 
