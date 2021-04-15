@@ -16,13 +16,14 @@ For user accounts, we're going to use the Devise gem rather than the `draft:acco
 
 #### Installation
 
- - [Install the Devise gem.](https://github.com/heartcombo/devise#getting-started)
-   - Add `gem 'devise'` to your `Gemfile` (in this project it's already there).
-   - `rails generate devise:install`
-   - Follow the instructions that appear in the terminal.
-       - Add `config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }` to `config/development.rb`.
-       - Remember to define a root route soon; we don't have one to use yet, but `root "photos#index"` will work soon.
-   - Make a Git commit.
+  - Add `gem 'devise'` to your `Gemfile` (in this project it's already there).
+  - `rails generate devise:install`
+  - Follow the instructions that appear in the terminal.
+      - Add `config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }` to `config/development.rb`.
+      - Remember to define a root route soon; we don't have one to use yet, but `root "photos#index"` will work soon.
+  - Make a Git commit.
+
+[Read more about installing Devise here.](https://github.com/heartcombo/devise#getting-started)
 
 #### Generate Devise model
 
