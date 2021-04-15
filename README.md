@@ -8,7 +8,7 @@ In this project, we'll rebuild Photogram once more, but we'll do it without cutt
 
 Currently, this is a blank application. Here is an ERD of the models that we want:
 
-![Photogram ERD](photogram-final-erd.png.png)
+![Domain Model](erd.png?raw=true "Domain Model")
 
 ### User accounts with Devise
 
