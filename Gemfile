@@ -70,9 +70,9 @@ group :development do
   gem 'rails_db'
   gem 'rails-erd'
   gem 'rollbar'
-  gem 'rubocop'
-  gem 'rubocop-performance'
-  gem 'rubocop-rails'
+  gem "standard", require: false
+  gem "rubocop-rails", require: false
+  gem "rubocop-rspec", require: false
   gem 'skylight'
-  gem 'web_git', github: 'firstdraft/web_git', branch: 'spring2020'
+  gem 'web_git', github: 'firstdraft/web_git'
 end

@@ -1,7 +1,6 @@
 GIT
   remote: https://github.com/firstdraft/web_git.git
-  revision: a2be64e762eb0d79a204ab8cf941e99c1b2a2a8d
-  branch: spring2020
+  revision: 934e081e566dc25e6510b4c8780330e7198b6e5e
   specs:
     web_git (0.1.0)
       actionview
@@ -262,6 +261,8 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
+    rubocop-rspec (2.9.0)
+      rubocop (~> 1.19)
     ruby-graphviz (1.2.5)
       rexml
     ruby-progressbar (1.11.0)
@@ -300,6 +301,9 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    standard (1.10.0)
+      rubocop (= 1.27.0)
+      rubocop-performance (= 1.13.3)
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
     thor (1.2.1)
@@ -361,13 +365,13 @@ DEPENDENCIES
   rails-erd
   rails_db
   rollbar
-  rubocop
-  rubocop-performance
   rubocop-rails
+  rubocop-rspec
   sass-rails (>= 6)
   selenium-webdriver
   skylight
   spring
+  standard
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
