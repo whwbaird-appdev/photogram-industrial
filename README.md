@@ -184,7 +184,7 @@ A handy option to add to `belongs_to` is `:counter_cache`: [read about it](https
 
 ##### has_many
 
-Then, go through and add their other halves — corresponding `has_many` declarations.
+Then, go through and add their other halves — corresponding `has_many` declarations.
 
 For example:
 
@@ -206,7 +206,7 @@ In standard Rails applications, the default is opposite: `belongs_to` adds an au
 
 So: if you decided to _remove_ the `null: true` database constraint from any of your foreign key columns, then you should also _add_ the `optional: true` option to the corresponding `belongs_to` association accessor.
 
-So remember — if you're ever in the situation of:
+So remember — if you're ever in the situation of:
 
  - you're trying to save a record
  - the save is failing
@@ -330,7 +330,7 @@ Notes:
     ```
 
     The above will automatically set the value of the foreign key column, in this case `owner_id`. Handy! There's also a `build` method that is similar to `new`; it will instantiate the object but won't save it yet. `create` instantiates and saves all at once.
- - When writing sample data, if you feel the urge to write logic to enforce some rules about the validity of the data that you're creating, then it might be a sign that you are missing some validations. (This is one is the biggest benefits of going through the exercise of writing the `sample_data` tasks — it reveals missing validations.)
+ - When writing sample data, if you feel the urge to write logic to enforce some rules about the validity of the data that you're creating, then it might be a sign that you are missing some validations. (This is one is the biggest benefits of going through the exercise of writing the `sample_data` tasks — it reveals missing validations.)
 
     For example, when writing the Ruby to create a few likes, were you tempted to write a conditional to make sure that the same user didn't like the same photo multiple times? Then you probably forgot a validation:
 
@@ -341,7 +341,7 @@ Notes:
     ```
 
     Then, in your `sample_data` task, you need not worry about accidentally creating duplicates; your validation has your back.
- - You can [use scopes in your associations](https://guides.rubyonrails.org/active_record_querying.html#scopes). Combined with indirect associations, you can do some very powerful stuff. As you're writing your sample data task, re-evaluate the associations you wrote. Can you define a single `has_many` that:
+ - You can [use scopes in your associations](https://remimercier.com/scoped-active-record-associations/). Combined with indirect associations, you can do some very powerful stuff. As you're writing your sample data task, re-evaluate the associations you wrote. Can you define a single `has_many` that:
      - returns all of a user's accepted sent follow requests?
      - returns a user's `leaders` (recipients of accepted sent follow requests)?
      - returns a user's `feed` (photos posted by a user's leaders)?
@@ -391,4 +391,4 @@ before_action :authenticate_user!
 
 ### Interface
 
-Now: make an interface that you like, perhaps something similar to this](https://photogram-final-target.herokuapp.com/).
+Now: make an interface that you like, perhaps something [similar to this](https://photogram-final-target.herokuapp.com/).
