@@ -1,19 +1,22 @@
 task sample_data: :environment do
   p "Creating users..."
-  12.times{
-    name = Faker::Name.unique.first_name
-    user = User.create(
-        email: "#{name.downcase}@example.com",
-        username: name,
-        password: "password",
-        private: [true, false].sample,
-      )
-      p user.username
-    }
+
+  usernames = Array.new { Faker::Name.first_name }
+  usernames << "alice"
+  usernames << "bob"
+
+  usernames.each do |username|
+    User.create(
+      email: "#{username}@example.com",
+      username: username.downcase,
+      password: "password",
+      private: [true, false].sample,
+    )
+  end  
   p "#{User.count} users have been created"
 end
 
-task force_follow: :environment do
+task sample_follow: :environment do
   p "Following..."
   users = User.all
   users.each do |first_user|
@@ -41,7 +44,7 @@ task sample_content: :environment do
   users.each do |user|
     rand(10).times do
       photo = user.own_photos.create(
-        caption: Faker::Quotes::Shakespeare,
+        caption: "#{Faker::Quotes::Shakespeare}",
         image: "https://robohash.org/#{rand(9999)}"
       )
       user.followers.each do |follower|
@@ -62,12 +65,22 @@ task sample_content: :environment do
   p "#{Comment.count} comments have been made."
 end
 
+task destroy_users: :environment do
+  if Rails.env.development?
+    FollowRequest.destroy_all
+    User.destroy_all
+    p "Users destroyed."
+  else
+    p "No u"
+  end
+end
+
 task destroy_content: :environment do
   if Rails.env.development?
-    Photo.destroy_all
     Like.destroy_all
     Comment.destroy_all
-    p "Content cleared."
+    Photo.destroy_all
+    p "Content destroyed"
   else
     p "No u"
   end
